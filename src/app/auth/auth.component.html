@@ -1,0 +1,71 @@
+
+<div class="container-fluid">
+
+    <div class="container"  id="container">
+        <div class="form-container sign-up">
+            <form [formGroup]="signUpForm" (submit)="signUp(signUpForm)">
+                <h1>Create Account</h1>
+                <span>or use your email for registeration</span>
+                <!-- <span class="p-float-label">
+                    <input type="text" pInputText formControlName="userName">
+                    <label>Username</label>
+                </span> -->
+                <input type="text" class="form-control mb-2" formControlName="userName" placeholder="Username">
+                <input type="email" class="form-control mb-2" formControlName="emailAddress" placeholder="Email">
+                <input type="text" class="form-control mb-2" formControlName="password" placeholder="Password">
+                <input type="text" class="form-control mb-2" formControlName="confirmPassword" placeholder="Repeat Password">
+                <input type="text" class="form-control mb-2" formControlName="phone" placeholder="Phone">
+                <button  class="mt-2" [disabled]="signUpForm.invalid">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container py-4 sign-in">
+            <form [formGroup]="signInForm" (submit)="signIn(signInForm)">
+                <h1>Sign In</h1>
+                <span class="desc">or use your email password</span>
+
+                <div class="form-floating mb-3 mt-3 w-100">
+                    <input formControlName="emailAddress" type="email" class="form-control" id="floatingInput">
+                    <label for="floatingInput">Email address</label>
+                </div>
+
+                <div class="form-floating mb-3 w-100">
+                    <input formControlName="phone" type="text" class="form-control" id="floatingInput">
+                    <label for="floatingInput">Phone</label>
+                </div>
+
+                <div class="form-floating mb-3 w-100">
+                    <input formControlName="password" type="text" class="form-control" id="floatingInput">
+                    <label for="floatingInput">Password</label>
+                </div>
+
+                
+                <!-- <input type="email" class="form-control mb-2" formControlName="emailAddress" placeholder="Email"> -->
+                <!-- <input type="text" class="form-control mb-2" formControlName="phone" placeholder="Phone"> -->
+                <!-- <input type="text" class="form-control mb-2" formControlName="password" placeholder="Password"> -->
+                <!-- <input type="text" formControlName="rememberMe" placeholder="rememberMe"> -->
+                <!-- <a href="#">Forget Your Password?</a> -->
+                <button class="mt-2" [disabled]="signInForm.invalid">Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="btn-solid" id="login">
+                        Sign In
+                        <i class="fa-solid fa-arrow-right-long ms-2"></i>
+                    </button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hello, Friend!</h1>
+                    <p>Register with your personal details to use all of site features</p>
+                    <button class="btn-solid" id="register">
+                        <i class="fa-solid fa-arrow-left-long me-2"></i>
+                        Sign Up
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
