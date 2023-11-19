@@ -2,11 +2,11 @@
 <div class="nav-top">
     <p-sidebar [modal]="false" [(visible)]="sidebarVisibleScroll"  position="top">
         <div class="main">
-        
+
             <a class="logo" href="">
                 <img src="../../../assets/logo/Asset 2.png" alt="">
             </a>
-            
+
             <ul>
                 <li routerLink="/home" routerLinkActive="activeLG">Home</li>
                 <li routerLink="/shop" routerLinkActive="activeLG">Shop</li>
@@ -19,25 +19,25 @@
                         <i title="Orders" class="fa-solid fa-truck"></i>
                     </li>
                 </div>
-                
+
             </ul>
-    
+
             <div (click)="sidebarVisible = true" class="slide">
                 <i class="pi pi-align-justify"></i>
             </div>
-    
+
         </div>
     </p-sidebar>
 </div>
 
 
-<nav id="nav"> 
+<nav id="nav">
     <div class="main">
-        
+
         <a class="logo" href="">
             <img src="../../../assets/logo/Asset 2.png" alt="">
         </a>
-        
+
         <ul>
             <li routerLink="/home" routerLinkActive="activeLG">Home</li>
             <li routerLink="/shop" routerLinkActive="activeLG">Shop</li>
@@ -50,7 +50,7 @@
                     <i title="Orders" class="fa-solid fa-truck"></i>
                 </li>
             </div>
-            
+
         </ul>
 
         <div (click)="sidebarVisible = true" class="slide">
@@ -71,7 +71,7 @@
             </li>
             <li title="Orders" routerLink="/order" routerLinkActive="activeSM">
                 <i class="icon fa-solid fa-truck"></i>
-            </li>        
+            </li>
         </ul>
     </div>
 </p-sidebar>
@@ -91,13 +91,13 @@
                     <h6 class="title">{{p.product.name}}</h6>
                     <p> {{p.q}} x {{p.product.price | currency :' EGP ':'symbol'}}</p>
                 </div>
-                
+
             </div>
 
             <!-- Your Cart is Empty -->
         <div *ngIf="_ProductsService.dataArraySubject.getValue().length <= 0 "
             class="col-sm-12 empty-cart-cls text-muted text-center">
-            <img src="../../assets/icon-empty-cart.png" 
+            <img src="../../assets/icon-empty-cart.png"
                  class="img-fluid mb-4">
             <h3>
                 <strong>Your Cart is Empty</strong>
@@ -129,7 +129,7 @@
                     <span>Checkout</span>
                 </button>
             </div>
-        </div>        
+        </div>
     </p-sidebar>
 </div>
 
