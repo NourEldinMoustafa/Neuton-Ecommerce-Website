@@ -39,7 +39,7 @@
         </div>
 
         <div class = "contact-form" >
-            <form id ="contact-form" [formGroup]="form"] action="javascript:void(0)"(submit)="send()">
+            <form id ="contact-form" [formGroup]="form" action="javascript:void(0)"(submit)="send()">
             <div>
                 <input formControlName="name" type = "text" id="name" class = "form-control" placeholder=" Name" name="name" required="">
                 <!-- <input type = "text" class = "form-control" placeholder="Last Name"> -->
@@ -48,8 +48,8 @@
                 <input formControlName="email" type = "email" class = "form-control" placeholder="E-mail" id="reply_to" name="email" required="">
                 <input formControlName="subject" type = "text" class = "form-control" placeholder="Subject" id="subject">
             </div>
-            <textarea formControlName="Message" rows = "5" placeholder="Message" class = "form-control" id="message" name="message" type="text" required=""></textarea>
-            <input type = "submit" class = "send-btn submit" value = "send message" type="submit" value="Send">
+            <textarea formControlName="message" rows = "5" placeholder="Message" class = "form-control" id="message" name="message" type="text" required=""></textarea>
+            <input type = "submit" class = "send-btn submit" value = "send message" value="Send">
             </form>
 
             <div>
@@ -87,7 +87,7 @@
 </section>
 
 <!--start whatsapp icone -->
-<div class="fab">
+<!-- <div class="fab">
     <a href="https://api.whatsapp.com/send?phone=+201009252112&text=مرحبا+انا+اريد+معرفة+بعض+التفاصيل+الخاصة+بمنتجاتكم+في+موقع+https%3A%2F%2Fwww.neuton.com%2F&sca_esv=583622784&hl=en&source=hp&ei=QMRYZefGJ-KlkdUPwe-YyAQ&iflsig=AO6bgOgAAAAAZVjSUKKLeHVq9yt6kEVK5WrOUsF9gfWM&ved=0ahUKEwjn5s3E282CAxXiUqQEHcE3BkkQ4dUDCAk&uact=5&oq=مرحبا+انا+اريد+معرفة+بعض+التفاصيل+الخاصة+بمنتجاتكم+في+موقع+https%3A%2F%2Fwww.neuton.com%2F&gs_lp=Egdnd3Mtd2l6IoMB2YXYsdit2KjYpyDYp9mG2Kcg2KfYsdmK2K8g2YXYudix2YHYqSDYqNi52LYg2KfZhNiq2YHYp9i12YrZhCDYp9mE2K7Yp9i12Kkg2KjZhdmG2KrYrNin2KrZg9mFINmB2Yog2YXZiNmC2LkgaHR0cHM6Ly93d3cubmV1dG9uLmNvbS8yChAAGAMYjwEY6gIyChAAGAMYjwEY6gIyChAuGAMYjwEY6gIyChAAGAMYjwEY6gIyChAAGAMYjwEY6gIyChAAGAMYjwEY6gIyChAAGAMYjwEY6gJIvAlQoAVYoAVwAXgAkAEAmAEAoAEAqgEAuAEDyAEA-AEC-AEBqAIH&sclient=gws-wiz"
       target="_blank" class="fab__button">
       <i class="lp-icon">
@@ -100,5 +100,5 @@
       <div class="pulse pulse-2"></div>
       <div class="pulse pulse-3"></div>
     </div>
-</div>
+</div> -->
 <!--end whatsapp icone-->
