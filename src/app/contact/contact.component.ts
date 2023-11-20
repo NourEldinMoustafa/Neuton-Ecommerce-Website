@@ -42,14 +42,14 @@ export class ContactComponent {
 
         // Check both responses and show appropriate alerts
         if (adminResponse && userResponse) {
-          alert('Messages have been sent!');
+          alert('Message have been sent!');
           this.form.reset();
         } else {
-          alert('An error occurred while sending emails. Please try again later.');
+          alert('An error occurred while sending email. Please try again later.');
         }
       } catch (error) {
         console.error('Error sending emails:', error);
-        alert('An error occurred while sending emails. Please try again later.');
+        alert('An error occurred while sending email. Please try again later.');
       }
     } else {
       alert('Please fill in all required fields correctly.');
