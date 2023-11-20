@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
-
+import { MessageService } from 'primeng/api';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { OrderAddressService } from '../services/order-address.service';
@@ -11,6 +11,7 @@ import { OrderItemService } from '../services/order-item.service';
   selector: 'app-order',
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.scss'],
+  providers: [MessageService],
 })
 export class OrderComponent {
   constructor(
@@ -18,7 +19,8 @@ export class OrderComponent {
     private _ProductsService: ProductsService,
     private orderService: Order2Service,
     private router: Router,
-    private orderItemService: OrderItemService
+    private orderItemService: OrderItemService,
+    private messageService: MessageService,
   ) {
     this.shippingForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(5)]),
@@ -40,6 +42,9 @@ export class OrderComponent {
   totalPrice: number = 0;
 
   ngOnInit(): void {
+
+    this._ProductsService.dataArraySubject.next([]);
+
     this.getCartProducts();
 
     this.getAllcountries();
@@ -59,6 +64,7 @@ export class OrderComponent {
       },
     });
     this.checkPaid = this.paidCompleted;
+
   }
 
   IDs: any[] = JSON.parse(localStorage.getItem('cartProducts')!);
@@ -139,9 +145,10 @@ export class OrderComponent {
         .AddShippingAddress(this.shippingaddress)
         .subscribe(
           (data: any) => {
+            this.showSuccess()
             console.log('Data From API : ', data);
             this.GetShippingAddress();
-            this.isCheck = true;
+            this.isCheck = true
           },
 
           (err) => {
@@ -163,7 +170,7 @@ export class OrderComponent {
       this.shippingaddressService
         .GetShippingAddress(this.userid)
         .subscribe((data: any) => {
-          if (data != undefined) {
+          if (data != undefined) {            
             this.isCheck = true;
             this.shipping = data;
             console.log(this.shipping);
@@ -248,4 +255,42 @@ export class OrderComponent {
     this.router.navigate(['/all-orders']);
     localStorage.removeItem('cartProducts');
   }
+
+
+  // Form to make register
+  payForm: FormGroup = new FormGroup(
+    {
+      cardName: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(50),
+      ]),
+      cardNum: new FormControl(null, [Validators.required,]),
+      date: new FormControl(null, [ Validators.required ]),
+      city: new FormControl(null, [ Validators.required ]),
+      zip: new FormControl(null, [Validators.required]),
+    }
+  );
+
+  isCredit:boolean = false
+  // stateOptions: any[] = [
+  //   {label: 'Upon Delivery', value: 'delevry'}, 
+  //   {label: 'Credit Card', value: 'credit'}
+  // ];
+
+    // value: string = 'delevry';
+
+  pay(body: FormGroup){
+    body.reset()
+  }
+
+  showSuccess() {
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Done',
+      detail: 'Your Address Added',
+    });
+  }
+
+
 }

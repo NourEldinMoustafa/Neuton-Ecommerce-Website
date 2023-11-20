@@ -15,11 +15,17 @@
   <div class="row">
     <div class="col-lg-3">
       <app-filter-category (catEmitter)="catValue = $event" 
-      (priceEmitter)="priceValue = $event"></app-filter-category>
+      ></app-filter-category>
+
+      <!-- <app-filter-category (catEmitter)="catValue = $event" 
+      (priceEmitter)="priceValue = $event"></app-filter-category> -->
     </div>
     <div class="col-lg-9">
       <app-filtered-products [catProducts]="catValue" 
-      [priceProducts]="priceValue"></app-filtered-products>
+      ></app-filtered-products>
+
+      <!-- <app-filtered-products [catProducts]="catValue" 
+      [priceProducts]="priceValue"></app-filtered-products> -->
     </div>
   </div>
 </div>

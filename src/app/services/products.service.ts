@@ -43,6 +43,8 @@ export class ProductsService {
   // }
 
   dataArraySubject: BehaviorSubject<Array<any>> = new BehaviorSubject<Array<any>>([]);
+  filterProducts$: BehaviorSubject<Array<any>> = new BehaviorSubject<Array<any>>([]);
+  multiCats$: BehaviorSubject<Array<any>> = new BehaviorSubject<Array<any>>([]);
 
   products:any [] = []
   totalPrice: number = 0;
@@ -64,6 +66,11 @@ export class ProductsService {
       }
       this.dataArraySubject.next(this.products)
     }
+  }
+
+
+  getProductById(id:any):Observable<any>{
+    return this._HttpClient.get(this.baseURL + `Product/GetProdById?id=${id}`)
   }
 
 }

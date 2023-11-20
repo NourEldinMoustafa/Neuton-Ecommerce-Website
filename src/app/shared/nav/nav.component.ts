@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -7,7 +8,8 @@ import { ProductsService } from 'src/app/services/products.service';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent {
-  constructor(public _ProductsService: ProductsService) {}
+  constructor(public _ProductsService: ProductsService,
+    private _AuthService:AuthService) {}
 
   sidebarVisible: boolean = false;
   sidebarVisibleScroll: boolean = false;
@@ -33,6 +35,18 @@ export class NavComponent {
     });
 
     this._ProductsService.getCartProducts();
+
+
+    this._AuthService.userData.subscribe(()=>{
+      if(this._AuthService.userData.getValue() != null){
+        this.isLogin = true
+      }else{
+        this.isLogin = false
+      }
+    })
+
+    
+    
   }
 
   //Get total Price for all products
@@ -47,5 +61,10 @@ export class NavComponent {
         this._ProductsService.dataArraySubject.getValue()[i].product.price *
         this._ProductsService.dataArraySubject.getValue()[i].q;
     }
+  }
+
+  isLogin:boolean = false
+  calLogout(){
+    this._AuthService.logout();
   }
 }

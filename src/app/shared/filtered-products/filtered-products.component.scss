@@ -274,7 +274,6 @@
   }
   // p-dropdown-items ng-star-inserted
   .p-dropdown-panel {
-
     // background-color: red;
     text-align: center !important;
     margin: auto !important;
@@ -291,8 +290,7 @@
       align-items: center !important;
       flex-direction: column !important;
 
-      *{
-
+      * {
       }
     }
   }
@@ -307,4 +305,12 @@
       }
     }
   }
+}
+
+.multi-cat {
+  border: solid 1px var(--main-color);
+  padding: 3px;
+  margin-right: 5px;
+  color: var(--main-color);
+  background-color: white;
 }

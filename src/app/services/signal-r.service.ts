@@ -24,9 +24,10 @@ export class SignalRService {
       });
     }
 
+    // .withUrl('http://localhost:63468/orderStatusHub', {
     this.hubConnection = new signalR.HubConnectionBuilder()
       .configureLogging(signalR.LogLevel.Debug)
-      .withUrl('http://localhost:63468/orderStatusHub', {
+      .withUrl('http://nashed212-001-site1.atempurl.com/orderStatusHub', {
         skipNegotiation: true,
         transport: signalR.HttpTransportType.WebSockets,
       })

@@ -25,6 +25,8 @@ import { DataViewModule } from 'primeng/dataview';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { TagModule } from 'primeng/tag';
+import { HeadPhonsComponent } from './head-phons/head-phons.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { TagModule } from 'primeng/tag';
     FeaturedMobilesComponent,
     BrowseCategoriesComponent,
     FilterCategoryComponent,
-    FilteredProductsComponent
+    FilteredProductsComponent,
+    HeadPhonsComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -60,7 +64,9 @@ import { TagModule } from 'primeng/tag';
     BrowseCategoriesComponent,
     FilterCategoryComponent,
     FilteredProductsComponent,
-    FormsModule
+    FormsModule,
+    HeadPhonsComponent,
+    SpinnerComponent
   ]
 })
 export class SharedModule { }

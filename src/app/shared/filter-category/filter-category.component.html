@@ -3,20 +3,43 @@
 </div> -->
 
 
-
+<!-- Filter By Categories -->
 <div class="filter-cat">
     <div class="select-cat">
         <div class="caret-cat"></div>
         <span>Categories</span>
     </div>
     <ul class="menu">
-        <li (click)="filterCat(-1)">All</li>
-        <li *ngFor="let cat of allCats" (click)="filterCat(cat.id)">
+        <app-spinner *ngIf="isLoading"></app-spinner>
+        <li (click)="filterCat(-1,'')">All</li>
+        <li *ngFor="let cat of allCats" (click)="filterCat(cat.id,cat.name)">
             {{cat.name}}
         </li>
     </ul>
 </div>
 
+<!-- Filter By Multi Categories -->
+<div class="filter-cat Mfilter-cat mt-4">
+    <div class="select-cat Mselect-cat">
+        <div class="caret-cat Mcaret-cat"></div>
+        <span>Multi Categories</span>
+    </div>
+    <ul class="menu Mmenu">
+        <!-- <li (click)="filterCat(-1)">All</li> -->
+        <app-spinner *ngIf="isLoading"></app-spinner>
+        <div *ngIf="clearFilter" class="clr-fltr">
+            <span>Clear Filter</span>
+            <i (click)="clearMultiFilter()" class="pi pi-times"></i>
+        </div>
+        <li *ngFor="let cat of allCats" (click)="filterMulltiCat(cat.name)">
+            {{cat.name}}
+        </li>
+    </ul>
+</div>
+
+
+
+<!-- Price -->
 <div class="filter-price mb-4">
     <div class="select-price">
         <div class="caret-price"></div>
@@ -24,6 +47,7 @@
     </div>
 
     <div class="range justify-content-center">
+        
         <label class="form-control">{{rangeValues}}</label>
         <p-slider [min]="0" [max]="10000" [(ngModel)]="rangeValues" 
         [range]="true" (onSlideEnd)="filterPrice(rangeValues)"

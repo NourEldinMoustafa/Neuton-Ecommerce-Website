@@ -1,10 +1,24 @@
 
+<p-toast></p-toast>
 
+<div class="container-title">
+  <div class="head">
+    <div>Tracking</div>
+    <div>
+      <span class="cursor-pointer" routerLink="/home">Home</span>
+      /
+      <span>Tracking</span>
+    </div>
+  </div>
+</div>
 
 <div class="container all-content">
-    <div class="row">
-      <div class="col-md-7">
-        <h3 style="color: #1842b6;">{{'Arriving in'}} {{order.arrivalDate|date:'short'}}</h3>
+    <div class="row mb-2">
+      <div class="col-md-12">
+        <h3 style="color: #1842b6; text-align: center;">
+          {{'Arriving in'}} 
+          {{order.arrivalDate|date:'short'}}
+        </h3>
       </div>
     </div>
   
@@ -28,7 +42,7 @@
                     <span class="text-medium">
                         {{'Shipped Via'}}:
                     </span>
-                    {{' Team'}}
+                    {{' Newton'}}
                 </div>
                 
                 <div class="w-100 text-center py-1 px-2">
@@ -102,7 +116,7 @@
     <div class="row ">
   
       <div class="col-md-4 col-sm-12 mb-2">
-        <div class="card mb-3 p-4 " style="color:rgb(16, 79, 53) ;">
+        <div class="card mb-3 p-4 " style="color:#1842b6 ;">
           <h3>{{'Shipping Address'}}</h3>
           <h6>{{shippingAddress.name}}</h6>
           <h6>{{shippingAddress.buildname}}</h6>
@@ -112,8 +126,8 @@
       </div>
 
       <div class="col-md-4 col-sm-12 mb-2 ">
-        <div class="card mb-3 p-4 " style="color:rgb(34, 79, 60) ;">
-          <h4>{{'Order info'}}</h4>
+        <div class="card mb-3 p-4 ">
+          <h4 style="color:#1842b6 ;">{{'Order info'}}</h4>
           <br>
           <br>
           <button class="btn btn-solid w-lg-50 w-75 mx-auto" 
@@ -154,7 +168,7 @@
     </div>
   </div> -->
 
-  <p-dialog [(visible)]="visible" [modal]="true" 
+<p-dialog [(visible)]="visible" [modal]="true" 
             [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
     <p class="dialogP">
         <i class="icon fa-solid fa-ban"></i>

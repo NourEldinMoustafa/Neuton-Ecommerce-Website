@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 150px;
+  // padding-top: 150px;
 }
 
 .container {
@@ -50,40 +50,40 @@
   margin: 15px 0 10px;
 }
 
-button {
-  //   background-color: #512da8;
-  //   color: #fff;
-  //   font-size: 12px;
-  //   padding: 10px 45px;
-  //   border: 1px solid transparent;
-  //   border-radius: 8px;
-  //   font-weight: 600;
-  //   letter-spacing: 0.5px;
-  //   text-transform: uppercase;
-  //   margin-top: 10px;
-  //   cursor: pointer;
-  border-radius: 0 !important;
-  padding: 13px 29px;
-  color: #ffffff !important;
-  letter-spacing: 0.05em;
-  border: 2px solid var(--main-color) !important;
-  background-image: linear-gradient(
-    30deg,
-    var(--main-color) 50%,
-    transparent 50%
-  ) !important;
-  background-size: 850px;
-  background-repeat: no-repeat;
-  background-position: 0;
-  transition: background 300ms ease-in-out;
-  margin-right: 10px;
-  text-transform: uppercase;
-  &:hover {
-    background-position: 100%;
-    color: var(--main-color) !important;
-    background-color: #ffffff;
-  }
-}
+// button {
+//   //   background-color: #512da8;
+//   //   color: #fff;
+//   //   font-size: 12px;
+//   //   padding: 10px 45px;
+//   //   border: 1px solid transparent;
+//   //   border-radius: 8px;
+//   //   font-weight: 600;
+//   //   letter-spacing: 0.5px;
+//   //   text-transform: uppercase;
+//   //   margin-top: 10px;
+//   //   cursor: pointer;
+//   border-radius: 0 !important;
+//   padding: 13px 29px;
+//   color: #ffffff !important;
+//   letter-spacing: 0.05em;
+//   border: 2px solid var(--main-color) !important;
+//   background-image: linear-gradient(
+//     30deg,
+//     var(--main-color) 50%,
+//     transparent 50%
+//   ) !important;
+//   background-size: 850px;
+//   background-repeat: no-repeat;
+//   background-position: 0;
+//   transition: background 300ms ease-in-out;
+//   margin-right: 10px;
+//   text-transform: uppercase;
+//   &:hover {
+//     background-position: 100%;
+//     color: var(--main-color) !important;
+//     background-color: #ffffff;
+//   }
+// }
 
 .container button.hidden {
   background-color: transparent;
@@ -100,7 +100,7 @@ button {
   height: 100%;
 }
 
-input{
+input {
   // background-color: #eee;
   // border: none;
   // margin: 5px 0;
@@ -191,7 +191,7 @@ input{
   background-color: var(--main-color);
   height: 100%;
   background: linear-gradient(to right, #1842b6, #1842b6);
-//   background: linear-gradient(to right, #1842b6, #3267f6);
+  //   background: linear-gradient(to right, #1842b6, #3267f6);
   color: #fff;
   position: relative;
   left: -100%;
@@ -240,12 +240,12 @@ input{
 .btn-solid {
   border-radius: 0 !important;
   padding: 13px 29px;
-  color: var(--main-color) !important;
+  color: #ffffff !important;
   letter-spacing: 0.05em;
-  border: 2px solid #ffffff !important;
+  border: 2px solid var(--main-color) !important;
   background-image: linear-gradient(
     30deg,
-    #ffffff 50%,
+    var(--main-color) 50%,
     transparent 50%
   ) !important;
   background-size: 850px;
@@ -256,10 +256,58 @@ input{
   text-transform: uppercase;
   &:hover {
     background-position: 100%;
-    color: #ffffff !important;
-    background-color: var(--main-color) !important;
+    color: var(--main-color) !important;
+    background-color: #ffffff;
+  }
+}
+
+.window-btn {
+  color: var(--main-color) !important;
+  border: 2px solid #fff !important;
+  background-image: linear-gradient(
+    30deg,
+    #fff 50%,
+    transparent 50%
+  ) !important;
+  &:hover {
+    color: #fff !important;
+    background-color: var(--main-color);
   }
 }
 
 // color: var(--main-color) !important;
 // background-color: #ffffff !important;
+
+.msg-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -30px;
+  z-index: 99999999;
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .pi {
+    margin-right: 10px !important;
+    font-size: 20px;
+  }
+}
+
+.container-title {
+  background-color: #f2f2f2;
+  margin: 40px 0;
+  font-size: 16px;
+  color: #222222;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 100px;
+  }
+}

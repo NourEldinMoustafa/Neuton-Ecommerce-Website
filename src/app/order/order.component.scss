@@ -1,3 +1,24 @@
+
+.container-title {
+  background-color: #f2f2f2;
+  margin: 40px 0;
+  font-size: 16px;
+  color: #222222;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 100px;
+  }
+}
+
+
+
+
 *,
 *::before,
 *::after {
@@ -29,19 +50,22 @@ label,
 img {
   display: block;
 }
-input {
-  font: inherit;
-  width: 100%;
-  border: none;
-}
-input:focus {
-  outline: 2px solid hsl(219, 77%, 60%);
-}
-input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button {
-  appearance: none;
-  --webkit--appearance: none;
-  margin: 0;
+.adress-form{
+
+  input {
+    font: inherit;
+    width: 100%;
+    border: none;
+  }
+  input:focus {
+    outline: 2px solid hsl(219, 77%, 60%);
+  }
+  input::-webkit-inner-spin-button,
+  input::-webkit-outer-spin-button {
+    appearance: none;
+    --webkit--appearance: none;
+    margin: 0;
+  }
 }
 ::-webkit-scrollbar {
   width: 8px;
@@ -280,7 +304,7 @@ input::-webkit-outer-spin-button {
   color: hsl(0, 0, 100%);
 }
 .amount {
-  padding: 40px 60px;
+  padding: 40px 0px;
 }
 .amount > div {
   display: flex;
@@ -384,9 +408,12 @@ input::-webkit-outer-spin-button {
   }
 }
 
-input,
-select {
-  border: solid 1px var(--main-color);
+.adress-form{
+
+  input,
+  select {
+    border: solid 1px var(--main-color);
+  }
 }
 .btn-form,.btn-solid {
   border-radius: 0 !important;
@@ -409,5 +436,13 @@ select {
     background-position: 100%;
     color: var(--main-color) !important;
     background-color: #ffffff;
+  }
+}
+
+
+.pay-frm{
+  input{
+    padding: 10px;
+    margin-top: 5px;
   }
 }

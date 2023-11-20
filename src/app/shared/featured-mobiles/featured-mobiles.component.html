@@ -8,19 +8,20 @@
 
             <div class="col-lg-9 ">
                 <div class="container content">                    
+                    <!-- <app-spinner *ngIf="isLoading"></app-spinner> -->
+                    <app-spinner *ngIf="products.length <= 0"></app-spinner>
                     <div class="row">
-    
                         <div class="col-lg-10 item" *ngFor="let item of products | slice:0:5">
                             <div class="row">
                                 <div class="col-lg-2">
                                     <div class="fm-image">
-                                        <img [src]="item.images[0]">
+                                        <img [routerLink]="['/productdetails', item.id]" [src]="item.images[0]">
                                     </div>
                                 </div>
                                 <div class="col-lg-10 ">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <h3 class="fm-name">{{item.name}}</h3>
+                                            <h3 [routerLink]="['/productdetails', item.id]" class="fm-name">{{item.name}}</h3>
                                         </div>
                                         <div class="col-lg-12">
                                             <!-- <p class="fm-des text-muted">{{item.arabicDescription}}</p> -->
@@ -42,7 +43,10 @@
                                             <span>Battery : </span> 4805 mAh
                                         </div> -->
                                         <div class="col-lg-12">
-                                            <a class="btn-details" href="">More Details <span> ...</span></a>
+                                            <a class="btn-details" [routerLink]="['/productdetails', item.id]">
+                                                More Details 
+                                                <span> ...</span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -177,12 +181,14 @@
 
                             <div class="carousel-item active">
                                     <h4 class="crsel-item-title">New Mobiles</h4>
-
+                                    <app-spinner *ngIf="isLoading"></app-spinner>
                                     <div class="item-content" *ngFor="let item of newProducts | slice:0:3">
-                                        <img [src]="item.images[0]" class="d-block">
+                                        <img [routerLink]="['/productdetails', item.id]" [src]="item.images[0]" class="d-block">
                                     
                                         <div class="align-self-center">
-                                            <a > <h6>{{item.name}}</h6> </a>
+                                            <a> 
+                                                <h6>{{item.name}}</h6>
+                                            </a>
                                             <!-- <p class="text-muted">512/1000 GB with 16 GB RAM</p> -->
                                             <!-- <p class="text-muted">{{item.description}}</p> -->
                                             <h4> EGP {{item.price}} 
@@ -231,11 +237,14 @@
 
                             <div class="carousel-item">
                                     <h4 class="crsel-item-title">Used Mobiles</h4>
+                                    <app-spinner *ngIf="isLoading"></app-spinner>
                                     <div class="item-content" *ngFor="let item of usedProducts | slice:0:3">
-                                        <img [src]="item.images[0]" class="d-block " alt="...">
+                                        <img [routerLink]="['/productdetails', item.id]" [src]="item.images[0]" class="d-block " alt="...">
                                     
                                         <div class="align-self-center">
-                                            <a > <h6>{{item.name}}</h6> </a>
+                                            <a> 
+                                                <h6>{{item.name}}</h6> 
+                                            </a>
                                             <!-- <p class="text-muted">512/1000 GB with 16 GB RAM</p> -->
                                             <!-- <p class="text-muted">{{item.arabicDescription}}</p> -->
                                             <h4> EGP {{item.price}} 
