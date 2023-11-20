@@ -59,7 +59,7 @@ export class ContactComponent {
 
 
 
-// start ----this is for only admin
+// start ----this is for only admin-------------
 // async send() {
 //   if (this.form.valid) {
 //     emailjs.init("0XpC30yg7gM4VDRSv");
@@ -82,7 +82,7 @@ export class ContactComponent {
 // }
 // }
 
-// End ----this is for only admin
+// End ----this is for only admin----------
 
 
 
