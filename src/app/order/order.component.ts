@@ -51,7 +51,7 @@ export class OrderComponent {
     render({
       id: '#myPaypalButtons',
       currency: 'USD',
-      value: this.totalPrice.toString(),
+      value: "100.00",
       onApprove: (details) => {
         //this.paidCompleted=true;
         //this.createOrder();

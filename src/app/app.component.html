@@ -4,7 +4,7 @@
   <p-dialog header="Header" [(visible)]="visible" *ngIf="visibleLarge"
             position="top" [style]="{ width: '50vw' }">
     <p>
-      <!-- <i class="icon fa-solid fa-cart-shopping" 
+      <!-- <i class="icon fa-solid fa-cart-shopping"
          *ngIf="msg === 'Ordered Today'" ></i>
       <i class="icon fa-solid fa-gear"
          *ngIf="msg === 'Shipped'"></i>
@@ -13,10 +13,10 @@
       <i class="icon fa-solid fa-person-circle-check"
          *ngIf="msg === 'Arrived'"></i> -->
          <i class="icon fa-solid fa-bell"></i>
-      Hay! One Order  <span>  {{  msg }} </span> 
+      Hay! One Order  <span>  {{  msg }} </span>
     </p>
     <div class="msg-btns">
-      <button class="btn btn-solid" 
+      <button class="btn btn-solid"
               routerLink="/all-orders" (click)="visible = false">
         View Orders
       </button>
@@ -30,10 +30,10 @@
             position="top" [style]="{ width: '90vw' }">
     <p>
       <i class="icon fa-solid fa-bell"></i>
-      Hay! One Order  <span>  {{  msg }} </span> 
+      Hay! One Order  <span>  {{  msg }} </span>
     </p>
     <div class="msg-btns">
-      <button class="btn btn-solid" 
+      <button class="btn btn-solid"
               routerLink="/all-orders" (click)="visible = false">
         View Orders
       </button>

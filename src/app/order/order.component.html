@@ -40,7 +40,7 @@
             <label for="floatingSelect">City</label>
         </div>
 
-        
+
 
         <button class="mt-2">Sign In</button>
     </form>
@@ -53,15 +53,15 @@
         <i class="fa-solid fa-truck icone"></i>
         Shopping Orders
     </h1>
-        
+
   <div class="item-flex">
-    
+
     <section class="checkout">
 
       <div class="container-flud w-100">
         <div class="row w-100">
             <div class="w-100 col-md-7 col-sm-12 bg-white">
-                
+
                 <!-- Form Order Address  -->
                 <div class="row w-100">
                     <div *ngIf="isCheck == false">
@@ -71,17 +71,17 @@
                         <div class="card">
                             <div class="p-3">
                                 <form [formGroup]="shippingForm" (ngSubmit)="addShippingAddress()">
-                                    
+
                                     <!-- <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="floatingInput" 
+                                        <input type="text" class="form-control" id="floatingInput"
                                             placeholder="name@example.com">
                                         <label for="floatingInput">Full Name</label>
                                     </div> -->
-                                    
+
                                     <div class="form-floating col-md-8 col-sm-12 mb-3">
-                                        <input type="text" class="form-control" id="fullname" 
-                                            placeholder="{{ 'Full Name' }}" name="name" 
-                                            formControlName="name" 
+                                        <input type="text" class="form-control" id="fullname"
+                                            placeholder="{{ 'Full Name' }}" name="name"
+                                            formControlName="name"
                                             [ngClass]="{'is-invalid': (name?.touched || name?.dirty) && name?.invalid}"/>
                                         <label for="fullname" class="col-md-4 col-form-label">
                                             {{"Full Name"}}
@@ -97,7 +97,7 @@
                                             {{"Phone Number"}}
                                         </label>
                                     </div>
-                        
+
                                     <div class="form-floating col-md-8 col-sm-12 mb-3">
                                         <select id="countryid" (change)="getAllCitiesBycountryId()"
                                                 formControlName="countryid" class="form-control"
@@ -131,7 +131,7 @@
                                             [ngClass]="{ 'is-invalid': (street?.touched || street?.dirty) && street?.invalid}"/>
                                         <label for="street" class="col-md-4 col-form-label">
                                             {{"Street Name"}}
-                                        </label>                            
+                                        </label>
                                     </div>
 
                                     <div class="form-floating col-md-8 col-sm-12 mb-3">
@@ -142,9 +142,9 @@
                                         <label for="buildName" class="col-md-4 col-form-label">
                                             {{ "Build Name" }}
                                         </label>
-                            
+
                                     </div>
-                        
+
                                     <br />
                                     <button type="submit" class="btn btn-form"
                                             [disabled]="!shippingForm.valid">
@@ -204,15 +204,15 @@
                             </div>
                         </form>
                     </div>
-                            
-                </div> 
+
+                </div>
             </div>
         </div>
       </div>
-                    
 
 
-        <!-- <h2 class="section-heading">Payment Details</h2>
+<!-- ----------start paypal-Payment Details------------- -->
+        <h2 class="section-heading">Payment Details</h2>
         <div class="payment-form">
             <div class="payment-method">
                 <button class="method selected">
@@ -251,8 +251,9 @@
                 </div>
             </form>
         </div>
-        <button class="btn btn-primary"><b>Pay</b> $ <span id="payAmount">2.15</span></button> -->
+        <button class="btn btn-primary"><b>Pay</b> $ <span id="payAmount">2.15</span></button>
     </section>
+<!-- ----------End paypal-Payment Details------------- -->
 
     <section class="cart">
         <div class="text-center d-flex justify-content-around align-items-center ">
@@ -282,10 +283,10 @@
                         <div class="warpper">
                             <div class="product-qty m-0 p-0">
                                 <!-- <button id="decrement">
-                                    <i class="fa-solid fa-minus icone"></i>             
+                                    <i class="fa-solid fa-minus icone"></i>
                                     </button> -->
-                                    <span id="quantity m-0 p-0">{{p.q}}</span>                      
-                                    <span id="quantity m-0 p-0">  * </span>                      
+                                    <span id="quantity m-0 p-0">{{p.q}}</span>
+                                    <span id="quantity m-0 p-0">  * </span>
                                 <!-- <button id="increment">
                                     <i class="fa-solid fa-plus icone"></i>
                                 </button> -->
@@ -304,7 +305,7 @@
 
             <div *ngIf="products.length <= 0"
                  class="text-muted text-center col-sm-12 empty-cart-cls text-center">
-                <img src="../../assets/icon-empty-cart.png" 
+                <img src="../../assets/icon-empty-cart.png"
                      class="img-fluid mb-4 mx-auto">
                 <h3>
                     <strong>No Orders Yet</strong>
@@ -314,8 +315,7 @@
                     continue shopping
                 </button>
             </div>
-
-            <!-- <div class="product-card">
+           <!-- <div class="product-card">
                 <div class="card">
                     <div class="img-box">
                     <img src="https://cdn1.smartprix.com/rx-ibsJ2hNrF-w1200-h1200/bsJ2hNrF.jpg" alt="mobile" width="80px" class="product-img">
@@ -325,9 +325,9 @@
                         <div class="warpper">
                             <div class="product-qty">
                                 <button id="decrement">
-                                    <i class="fa-solid fa-minus icone"></i>             
+                                    <i class="fa-solid fa-minus icone"></i>
                                     </button>
-                                    <span id="quantity">1</span>                      
+                                    <span id="quantity">1</span>
                                 <button id="increment">
                                     <i class="fa-solid fa-plus icone"></i>
                                 </button>
@@ -362,7 +362,7 @@
                 <div style="color: #1842b6;font-weight:bold;" class="total">
                     <span>Total Price :  </span>
                     <span>
-                        <span id="total"> {{totalPrice}}</span> 
+                        <span id="total"> {{totalPrice}}</span>
                         EGP
                     </span>
                 </div>
