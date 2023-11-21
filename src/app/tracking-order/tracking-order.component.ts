@@ -4,11 +4,13 @@ import { Order2Service } from '../services/order2.service';
 import { OrderAddressService } from '../services/order-address.service';
 import { SignalRService } from '../services/signal-r.service';
 import { BehaviorSubject } from 'rxjs';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-tracking-order',
   templateUrl: './tracking-order.component.html',
   styleUrls: ['./tracking-order.component.scss'],
+  providers: [MessageService],
 })
 export class TrackingOrderComponent {
   // @ViewChild('popup', { static: false }) myElementRef?: ElementRef;
@@ -19,6 +21,7 @@ export class TrackingOrderComponent {
   curruntStatus = new BehaviorSubject(0);
 
   constructor(
+    private messageService: MessageService,
     private orderService: Order2Service,
     private activatedRoute: ActivatedRoute,
     private OrderAddressService: OrderAddressService,
@@ -58,8 +61,9 @@ export class TrackingOrderComponent {
   cancelOrder(id: number) {
     if (this.order.status < 2) {
       this.orderService.DeleteOrder(id).subscribe((data: any) => {
-        this.router.navigate(['/all-orders']);
         this.close();
+        this.showSuccess()
+        this.router.navigate(['/all-orders']);
       });
     }
   }
@@ -70,6 +74,13 @@ export class TrackingOrderComponent {
   close() {
     this.visible = false;
   }
-
   visible: boolean = false;
+
+  showSuccess() {
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Done',
+      detail: 'Your Order Canceled',
+    });
+  }
 }

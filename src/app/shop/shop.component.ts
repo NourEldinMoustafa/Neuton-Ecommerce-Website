@@ -15,6 +15,6 @@ export class ShopComponent {
   }
   ngOnInit(): void {}
 
-  @Input() priceValue: any;
+  // @Input() priceValue: any;
   @Input() catValue: any;
 }

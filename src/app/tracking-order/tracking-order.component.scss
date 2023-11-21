@@ -1,5 +1,22 @@
+.container-title {
+  background-color: #f2f2f2;
+  margin: 40px 0;
+  font-size: 16px;
+  color: #222222;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 100px;
+  }
+}
+
 body {
-  margin-top: 20px;
+  // margin-top: 20px;
 }
 
 .steps .step {
@@ -146,7 +163,7 @@ body {
 }
 
 .all-content {
-  margin-top: 100px;
+  // margin-top: 100px;
   .head {
     background-color: var(--main-color);
     font-size: 20px;
@@ -173,7 +190,7 @@ body {
   }
 }
 
-.pop-btns{
+.pop-btns {
   text-align: center;
 }
 

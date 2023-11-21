@@ -8,6 +8,7 @@ import { SignalRService } from '../services/signal-r.service';
   selector: 'app-all-orders',
   templateUrl: './all-orders.component.html',
   styleUrls: ['./all-orders.component.scss'],
+  providers: [MessageService],
 })
 export class AllOrdersComponent {
   @ViewChild('popup', { static: false }) myElementRef?: ElementRef;
@@ -23,7 +24,7 @@ export class AllOrdersComponent {
   curruntStatus = new BehaviorSubject(0);
 
   constructor(
-    // private messageService: MessageService,
+    private messageService: MessageService,
     private order2Service: Order2Service,
     private router: Router,
     private _SignalRService: SignalRService
@@ -57,9 +58,10 @@ export class AllOrdersComponent {
         this.order = data;
         if (this.order.status < 2) {
           this.order2Service.DeleteOrder(this.orderIdDelete).subscribe(() => {
+            this.showSuccess()
             this.getAllOrder();
+            this.close();
           });
-          this.close();
         }
       });
   }
@@ -81,7 +83,15 @@ export class AllOrdersComponent {
 
   visible: boolean = false;
 
-  showDialog() {
-    this.visible = true;
+  // showDialog() {
+  //   this.visible = true;
+  // }
+
+  showSuccess() {
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Done',
+      detail: 'Your Order Canceled',
+    });
   }
 }

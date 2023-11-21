@@ -91,7 +91,7 @@ export class CartComponent implements OnInit {
   checkOut() {
     this.router.navigate(['/order']);
     this.products = [];
-    this._ProductsService.dataArraySubject.next(this.products);
+    // this._ProductsService.dataArraySubject.next(this.products);
     this.totalPrice = 0;
   }
 }

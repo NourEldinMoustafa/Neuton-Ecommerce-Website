@@ -9,11 +9,14 @@ import { AuthGuard } from './guards/auth.guard';
 import { AllOrdersComponent } from './all-orders/all-orders.component';
 import { TrackingOrderComponent } from './tracking-order/tracking-order.component';
 import { ContactComponent } from './contact/contact.component';
+import { PDetailsComponent } from './p-details/p-details.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'shop', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {path:"home", component:HomeComponent,title:"Home"},
   {path:"shop", component:ShopComponent,title:"Shop"},
+  {path:'productdetails/:id', component:PDetailsComponent},
   {path:"cart", component:CartComponent,title:"Cart"},
   {path:"auth", component:AuthComponent,title:"Auth"},
   {path:"contact", component:ContactComponent,title:"Contact"},
@@ -22,7 +25,7 @@ const routes: Routes = [
   {path:'all-orders',canActivate:[AuthGuard],component:AllOrdersComponent,title:"All Orders"},
   {path:'tracking/:orderId',canActivate:[AuthGuard],component:TrackingOrderComponent,title:" Tracking Package"},
 
-  // { path: '**', component: NotfoundComponent },
+  { path: '**', component: NotfoundComponent },
 ];
 
 @NgModule({

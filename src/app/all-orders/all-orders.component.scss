@@ -1,3 +1,20 @@
+.container-title {
+  background-color: #f2f2f2;
+  margin: 40px 0;
+  font-size: 16px;
+  color: #222222;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 100px;
+  }
+}
+
 .popup1 {
   width: 400px;
   background: #061b2f;
@@ -33,7 +50,7 @@
 }
 
 .orders {
-  margin-top: 100px;
+  // margin-top: 100px;
 }
 
 .btn-solid {
@@ -77,7 +94,7 @@
   }
 }
 
-.pop-btns{
+.pop-btns {
   text-align: center;
 }
 

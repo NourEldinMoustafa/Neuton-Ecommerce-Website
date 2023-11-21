@@ -23,6 +23,11 @@ import { PasswordModule } from 'primeng/password';
 import { AllOrdersComponent } from './all-orders/all-orders.component';
 import { TrackingOrderComponent } from './tracking-order/tracking-order.component';
 import { ContactComponent } from './contact/contact.component';
+import { PDetailsComponent } from './p-details/p-details.component';
+import { MessagesModule } from 'primeng/messages';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { GalleriaModule } from 'primeng/galleria';
 
 @NgModule({
   declarations: [
@@ -35,6 +40,8 @@ import { ContactComponent } from './contact/contact.component';
     AllOrdersComponent,
     TrackingOrderComponent,
     ContactComponent,
+    PDetailsComponent,
+    NotfoundComponent,
   ],
   imports: [
   BrowserModule,
@@ -51,6 +58,10 @@ import { ContactComponent } from './contact/contact.component';
     DialogModule,
     ReactiveFormsModule,
     PasswordModule,
+    MessagesModule,
+    ToastModule,
+    SelectButtonModule,
+    GalleriaModule
 
   ],
   providers: [],

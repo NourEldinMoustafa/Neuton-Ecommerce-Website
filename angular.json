@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            
             "outputPath": "dist/app",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -33,18 +34,19 @@
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-
+              "./node_modules/@fortawesome/fontawesome-free/css/all.min.css",              
+              
               "./node_modules/primeng/resources/themes/lara-light-blue/theme.css",
               "./node_modules/primeng/resources/primeng.min.css",
               "./node_modules/primeflex/primeflex.css",
-
+              
               "src/styles.scss"
             ],
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "./node_modules/@fortawesome/fontawesome-free/js/all.min.js",
+              "./node_modules/@fortawesome/fontawesome-free/js/all.min.js", 
               "./node_modules/jquery/dist/jquery.min.js"
+              
             ]
           },
           "configurations": {
@@ -109,7 +111,6 @@
               "src/styles.scss"
             ],
             "scripts": [
-
               "https://cdn.emailjs.com/sdk/2.3.2/email.min.js",
               "node_modules/emailjs-com/dist/email.min.js"
             ]

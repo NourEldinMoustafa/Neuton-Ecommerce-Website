@@ -1,15 +1,16 @@
-<!-- <div class="form-container py-4 sign-in address">
-    <form>
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Full Name</label>
-        </div>
 
-        <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Phone</label>
-        </div>
+<div class="container-title">
+    <div class="head">
+      <div>Order</div>
+      <div>
+        <span class="cursor-pointer" routerLink="/home">Home</span>
+        /
+        <span>Order</span>
+      </div>
+    </div>
+</div>
 
+<<<<<<< HEAD
         <div class="form-floating mb-3">
             <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
             <label for="floatingInput">Street Name</label>
@@ -48,6 +49,10 @@
 
 
 <main class="container pt-8">
+=======
+<p-toast></p-toast>
+<main class="container ">
+>>>>>>> d9ab014a59a636b2ce8d436e09714667d804d45c
     <h1 class="heading">
         <!-- <i class="fa-solid fa-cart-shopping icone"></i> -->
         <i class="fa-solid fa-truck icone"></i>
@@ -69,7 +74,7 @@
                             1 - {{ "Enter a new order address" }}
                         </div>
                         <div class="card">
-                            <div class="p-3">
+                            <div class="p-3 adress-form">
                                 <form [formGroup]="shippingForm" (ngSubmit)="addShippingAddress()">
 
                                     <!-- <div class="form-floating mb-3">
@@ -186,7 +191,15 @@
                     <div class="m-2" style="color: #1842b6;font-weight:bold;; ">
                         2 - {{"Payment Method"}}
                     </div>
-                    <div class=" mt-50 mb-50" style="  width: 500px; padding: 3rem 3.5rem;">
+
+                    <div class="pay-btns">
+                        <button (click)="isCredit = false" class="btn btn-solid">Upon Delivery</button>
+                        <button (click)="isCredit = true" class="btn btn-solid">Credit Card</button>
+                    </div>
+
+                    <!-- Paypal Package  -->
+
+                    <!-- <div class=" mt-50 mb-50" style="  width: 500px; padding: 3rem 3.5rem;">
                         <form>
                             <div class="row" >
                                 <div class="col-7">
@@ -203,14 +216,24 @@
                                 </div>
                             </div>
                         </form>
+<<<<<<< HEAD
                     </div>
 
                 </div>
+=======
+                    </div> -->
+
+          
+                </div> 
+>>>>>>> d9ab014a59a636b2ce8d436e09714667d804d45c
             </div>
         </div>
       </div>
 
+      
+      <h3 *ngIf="!isCredit" class="mt-3">Pay the amount upon delivery</h3>
 
+<<<<<<< HEAD
 <!-- ----------start paypal-Payment Details------------- -->
         <h2 class="section-heading">Payment Details</h2>
         <div class="payment-form">
@@ -230,18 +253,41 @@
                 <div class="cardholder-name">
                     <label for="cardholder-name" class="label-default">Cardholder name</label>
                     <input type="text" id="cardholder-name" name="cardholder-name" class="input-default">
+=======
+      <div class="card mt-2" *ngIf="isCredit">
+          <div class="pay-frm p-3">
+              <h3>Credit Card</h3>
+              <form class="row g-3" [formGroup]="payForm" (submit)="pay(payForm)">
+                <div class="col-md-12 mt-3">
+                  <label for="inputEmail4" class="form-label">Card Name</label>
+                  <input formControlName="cardName" type="text" class="form-control" id="inputEmail4"placeholder="CARD NAME">
+>>>>>>> d9ab014a59a636b2ce8d436e09714667d804d45c
                 </div>
-                <div class="card-number">
-                    <label for="card-number" class="label-default">Card number</label>
-                    <input type="number" id="card-number" name="card-number" class="input-default">
+                <div class="col-md-12 mt-3">
+                  <label for="inputPassword4" class="form-label">Card Number</label>
+                  <input formControlName="cardNum" type="text" class="form-control" id="inputPassword4" placeholder="CARD NMBER">
+                </div>            
+                <div class="col-12 mt-3">
+                  <label for="inputAddress2" class="form-label">Date</label>
+                  <input formControlName="date" type="date" class="form-control" id="inputAddress2" placeholder="DATE">
                 </div>
-                <div class="input-flex">
-                    <div class="expire-date">
-                        <label for="expire-date" class="label-default">Expiration date</label>
-                        <div class="input-flex">
-                            <input type="number" name="day" id="expire-date" placeholder="31" min="1"max="31" class="input-default">
-                            <input type="number" name="month" id="expire-date" placeholder="12" min="1"max="12" class="input-default">
+                <div class="col-md-6 mt-3 me-2">
+                  <label for="inputCity" class="form-label">City</label>
+                  <input formControlName="city" type="text" class="form-control" id="inputCity" placeholder="CITY">
+                </div>
+                
+                <div class="col-md-2 mt-3">
+                  <label for="inputZip" class="form-label">Zip</label>
+                  <input formControlName="zip" type="text" class="form-control" id="inputZip" placeholder="ZIP">
+                </div>            
+                <div class="col-12 mt-3">
+                  <button [disabled]="!payForm.valid" type="submit" class="btn btn-solid">Sign in</button>
+                </div>
+              </form>
+          </div>
+      </div>
 
+<<<<<<< HEAD
                         </div>
                     </div>
                     <div class="cvv">
@@ -252,6 +298,8 @@
             </form>
         </div>
         <button class="btn btn-primary"><b>Pay</b> $ <span id="payAmount">2.15</span></button>
+=======
+>>>>>>> d9ab014a59a636b2ce8d436e09714667d804d45c
     </section>
 <!-- ----------End paypal-Payment Details------------- -->
 
@@ -273,26 +321,38 @@
                 Order Summary
             </h2>
 
+            <!-- <app-spinner *ngIf="products.length <= 0"></app-spinner> -->
+
             <div  class="product-card" *ngFor="let p of products">
                 <div class="card p-2" *ngIf="products.length > 0">
                     <div class="img-box">
-                        <img [src]="p.product.images[0]" class="product-img">
+                        <img [routerLink]="['/productdetails', p.product.id]" 
+                             [src]="p.product.images[0]" class="product-img cursor-pointer">
                     </div>
                     <div class="details">
-                        <h4 class="product-name">{{p.product.name}}</h4>
+                        <h4 [routerLink]="['/productdetails', p.product.id]" 
+                            class="product-name cursor-pointer">
+                            {{p.product.name}}
+                        </h4>
                         <div class="warpper">
                             <div class="product-qty m-0 p-0">
                                 <!-- <button id="decrement">
                                     <i class="fa-solid fa-minus icone"></i>
                                     </button> -->
+<<<<<<< HEAD
                                     <span id="quantity m-0 p-0">{{p.q}}</span>
                                     <span id="quantity m-0 p-0">  * </span>
+=======
+                                    <span id="quantity m-0 p-0">{{p.q}}</span>                      
+                                    <span id="quantity m-0 p-0">  * </span>                      
+                                    <span id="price">{{p.product.price | currency:' EGP ':'symbol'}} </span>
+>>>>>>> d9ab014a59a636b2ce8d436e09714667d804d45c
                                 <!-- <button id="increment">
                                     <i class="fa-solid fa-plus icone"></i>
                                 </button> -->
                             </div>
                             <div class="price m-0 p-0">
-                                <span id="price">{{p.product.price}} L.E </span>
+                                <!-- <span id="price">{{p.product.price}} L.E </span> -->
                             </div>
                         </div>
                     </div>
@@ -315,6 +375,7 @@
                     continue shopping
                 </button>
             </div>
+<<<<<<< HEAD
            <!-- <div class="product-card">
                 <div class="card">
                     <div class="img-box">
@@ -364,10 +425,18 @@
                     <span>
                         <span id="total"> {{totalPrice}}</span>
                         EGP
+=======
+            <div class="amount w-100">
+                <div style="color: #1842b6;font-weight:bold;" class="total">
+                    <span>Total Price :  </span>
+                    <span>
+                        <span id="total"> {{totalPrice | currency:' EGP ':'symbol'}}</span> 
+                        
+>>>>>>> d9ab014a59a636b2ce8d436e09714667d804d45c
                     </span>
                 </div>
             </div>
-        </div>
+        </div>        
     </section>
   </div>
 </main>
